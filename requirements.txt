@@ -13,9 +13,9 @@ contextily
 shapely
 geopandas
 pillow
-basemap
 seaborn
 colorcet
 OWSLib==0.28.1
 influxdb
 scipy
+rasterio
