@@ -1,0 +1,48 @@
+Farsite BenchMark Results
+
+
+Simulation Info:
+	Landscape File: /home/jovyan/work/FARSITE_demo/landscape.lcp
+	Landscape Resolution: 90.0
+	Landscape Size: 218 x 221
+	Inputs File: /home/jovyan/work/FARSITE_demo/src/tmp/790c351a1eb440a1bd71e277d3fa106f_config.cfg
+	Farsite Start Time: 10 31 2058
+	Farsite End Time:   10 31 2128
+	Total Sim Time:     42.000000
+	Ignition File:      /home/jovyan/work/FARSITE_demo/src/tmp/790c351a1eb440a1bd71e277d3fa106f_ignite.shp
+	Barriers File:      /home/jovyan/work/FARSITE_demo/src/NoBarrier/NoBarrier.shp
+	Time Step:                  30.000000
+	Distance Resolution:        150.000000
+	Perimeter Resolution:       150.000000
+	Enable Spotting:            No
+	Spot Probability:           0.000000
+	Spot Ignition Delay:        0.000000
+	Spot Grid Resolution:        60
+	Spotting Seed:               253114
+	Minimum Spotting Distance:  60.000000
+	Foliar Moisture:            100.0000
+	Enable Crowning:            Yes
+	Crown Fire Method:          ScottRheinhart
+	                            Crown Density NOT LINKED to Crown Cover
+	Dist Check Method:          Fire Level
+	Acceleration:               On
+	Backing Spread:             Calculated from Elliptical Dimensions
+	Simulation Started:         10/31 20:00
+	Simulation Ended:           10/31  20:30
+	Elapsed Time:               00 00:30
+	Restore Ignitions:          No
+	Preserve Inactive Enclaves: Yes
+	Tree Species Number:        1
+	Conditoning Start:          0/0
+	Burn Periods:           0
+	Relative Burn Periods:      0
+	Internal Weather:            -20
+	Internal Winds:              2
+10 31 2058 1 91 0
+11 1 258 1 91 0
+
+	Total Farsite Run Time: 0.027 Seconds
+
+	Total Number of Threads: 4 (CrossThread only)
+
+	SVN Version: $Id: Farsite5.cpp 3428 2020-05-13 22:54:38Z crawl $
