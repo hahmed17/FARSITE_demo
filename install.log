@@ -100,5 +100,3 @@ Requirement already satisfied: geographiclib<3,>=1.52 in /opt/conda/lib/python3.
 Requirement already satisfied: executing>=1.2.0 in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (2.2.0)
 Requirement already satisfied: asttokens>=2.1.0 in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (3.0.0)
 Requirement already satisfied: pure_eval in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (0.2.3)
->-r requirements.txt (line 3)) (3.0.0)
-Requirement already satisfied: pure_eval in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (0.2.3)
