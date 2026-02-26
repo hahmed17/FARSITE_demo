@@ -1,0 +1,1 @@
+/home/jovyan/work/FARSITE_demo/landscape.lcp /home/jovyan/work/FARSITE_demo/src/tmp/772fc0e685b04cc888adcbd1810f08fb_config.cfg /home/jovyan/work/FARSITE_demo/src/tmp/772fc0e685b04cc888adcbd1810f08fb_ignite.shp /home/jovyan/work/FARSITE_demo/src/NoBarrier/NoBarrier.shp /home/jovyan/work/FARSITE_demo/src/tmp/772fc0e685b04cc888adcbd1810f08fb_out -1
