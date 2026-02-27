@@ -1,0 +1,23 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="Creator">USGS EROS Landfire Product Service</MDI>
+    <MDI key="DataType">Thematic</MDI>
+    <MDI key="ResampleResolution">90</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>US_250CC</Description>
+    <Metadata>
+      <MDI key="BandName">US_250CC</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">9.399621211758907,396.8918551606877,177.0835585323507,732.8970413827001,81.16851481303351,13.51651743606955,-56.20643789582479,-23.64006171451543</MDI>
+      <MDI key="STATISTICS_MAXIMUM">65</MDI>
+      <MDI key="STATISTICS_MEAN">8.0721434528773</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">13.307274647062</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

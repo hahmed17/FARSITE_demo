@@ -1,0 +1,48 @@
+Farsite BenchMark Results
+
+
+Simulation Info:
+	Landscape File: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/landscape.lcp
+	Landscape Resolution: 90.0
+	Landscape Size: 218 x 221
+	Inputs File: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/src/tmp/a737dbe5f14b49099360c858e703a21a_config.cfg
+	Farsite Start Time: 10 31 2328
+	Farsite End Time:   10 31 2358
+	Total Sim Time:     18.000000
+	Ignition File:      /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/src/tmp/a737dbe5f14b49099360c858e703a21a_ignite.shp
+	Barriers File:      /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/src/NoBarrier/NoBarrier.shp
+	Time Step:                  30.000000
+	Distance Resolution:        150.000000
+	Perimeter Resolution:       150.000000
+	Enable Spotting:            No
+	Spot Probability:           0.000000
+	Spot Ignition Delay:        0.000000
+	Spot Grid Resolution:        60
+	Spotting Seed:               253114
+	Minimum Spotting Distance:  60.000000
+	Foliar Moisture:            100.0000
+	Enable Crowning:            Yes
+	Crown Fire Method:          ScottRheinhart
+	                            Crown Density NOT LINKED to Crown Cover
+	Dist Check Method:          Fire Level
+	Acceleration:               On
+	Backing Spread:             Calculated from Elliptical Dimensions
+	Simulation Started:         10/31 23:00
+	Simulation Ended:           10/31  23:00
+	Elapsed Time:               00 00:00
+	Restore Ignitions:          No
+	Preserve Inactive Enclaves: Yes
+	Tree Species Number:        1
+	Conditoning Start:          0/0
+	Burn Periods:           0
+	Relative Burn Periods:      0
+	Internal Weather:            -20
+	Internal Winds:              2
+10 31 2328 1 91 0
+11 1 528 1 91 0
+
+	Total Farsite Run Time: 187.174 Seconds
+
+	Total Number of Threads: 4 (CrossThread only)
+
+	SVN Version: $Id: Farsite5.cpp 3428 2020-05-13 22:54:38Z crawl $

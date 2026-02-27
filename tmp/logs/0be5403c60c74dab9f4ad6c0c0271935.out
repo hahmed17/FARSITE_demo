@@ -1,0 +1,9 @@
+Farsite $Rev: 2395 $
+Number of parallel threads = 4 (omp_get_num_procs = 64).
+Loading lcp file for Farsite #1: data/landscape.lcp
+Loading inputs file for Farsite #1: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/tmp/d53ecbe3b8254a49b4026ad89758d53e_config.cfg
+Loading ignition file for Farsite #1: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/tmp/d53ecbe3b8254a49b4026ad89758d53e_ignite.shp
+Loading barrier file for Farsite #1: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/src/NoBarrier/NoBarrier.shp
+Launching Farsite #1
+Starting time step 0.000000 (maximum = 18)
+Writing outputs for Farsite #1 to /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/tmp/d53ecbe3b8254a49b4026ad89758d53e_out

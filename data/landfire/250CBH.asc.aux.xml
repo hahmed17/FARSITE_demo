@@ -1,0 +1,23 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="Creator">USGS EROS Landfire Product Service</MDI>
+    <MDI key="DataType">Thematic</MDI>
+    <MDI key="ResampleResolution">90</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>US_250CBH</Description>
+    <Metadata>
+      <MDI key="BandName">US_250CBH</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">2.972688499121698,86.37894431872084,51.23178806815197,185.4133894306212,14.24303879097988,71.76486777660108,381.2965322364843,22.73296275124898</MDI>
+      <MDI key="STATISTICS_MAXIMUM">100</MDI>
+      <MDI key="STATISTICS_MEAN">1.2411317114993</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">9.2940273465662</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

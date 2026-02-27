@@ -1,0 +1,23 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="Creator">USGS EROS Landfire Product Service</MDI>
+    <MDI key="DataType">Thematic</MDI>
+    <MDI key="ResampleResolution">90</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>US_250FBFM40</Description>
+    <Metadata>
+      <MDI key="BandName">US_250FBFM40</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">5.348775898357639,14.24303879097988,32.92476871154575,118.7106728148467,357.81043572353,388.8631984127879,2176.234148948406,183.3996561024399</MDI>
+      <MDI key="STATISTICS_MAXIMUM">188</MDI>
+      <MDI key="STATISTICS_MEAN">115.5588682885</MDI>
+      <MDI key="STATISTICS_MEDIAN">121.811765</MDI>
+      <MDI key="STATISTICS_MINIMUM">91</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">18.915877873457</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

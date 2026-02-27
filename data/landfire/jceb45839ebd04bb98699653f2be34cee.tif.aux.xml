@@ -1,0 +1,215 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="Creator">USGS EROS Landfire Product Service</MDI>
+    <MDI key="DataType">Thematic</MDI>
+    <MDI key="ResampleResolution">90</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>US_250CBD</Description>
+    <UnitOfMeasure>Kilograms per cubic meter * 100</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>24</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>44284|0|0|0|0|0|0|0|0|0|388|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|1618|0|0|0|0|0|0|0|0|0|81|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|77|0|0|0|0|0|0|0|0|0|58|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|78|0|0|0|0|0|0|0|0|0|0|45|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|0|0|0|0|0|17|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_250CBD</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">1.566129605388513,2.972688499121698,11.01977917024572,36.75812579169821,5.348775898357639,6.748235468282126,64.46346894781679,3.597270068302541</MDI>
+      <MDI key="STATISTICS_MAXIMUM">24</MDI>
+      <MDI key="STATISTICS_MEAN">0.25512806773122</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">1.251450999995</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <Description>US_250CBH</Description>
+    <UnitOfMeasure>Meters * 10</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>100</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>44284|0|0|0|0|0|0|118|0|0|543|0|10|0|0|5|0|15|0|0|8|0|664|0|0|10|0|0|9|0|3|0|0|42|0|310|0|0|4|0|43|0|0|5|0|4|0|0|95|0|0|33|0|3|0|0|3|0|0|0|0|2|0|13|0|0|0|0|0|0|0|1|0|0|0|0|7|0|0|0|0|0|0|0|0|0|2|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|4|0|0|0|0|0|0|0|17|0|0|0|0|2|0|2|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|4|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|3|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|373</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_250CBH</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">2.972688499121698,86.37894431872084,51.23178806815197,185.4133894306212,14.24303879097988,71.76486777660108,381.2965322364843,22.73296275124898</MDI>
+      <MDI key="STATISTICS_MAXIMUM">100</MDI>
+      <MDI key="STATISTICS_MEAN">1.2411317114993</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">9.2940273465662</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <Description>US_250CC</Description>
+    <UnitOfMeasure>Percent</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>65</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>44284|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|5|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|43|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|275|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1730|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|312|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|6</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_250CC</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">11.01977917024572,51.23178806815197,98.50489793598925,330.817496215511,32.92476871154575,94.82514701071332,630.4704371347786,38.13436641867862</MDI>
+      <MDI key="STATISTICS_MAXIMUM">65</MDI>
+      <MDI key="STATISTICS_MEAN">2.2757475083057</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">9.9249633720226</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <Description>US_250CH</Description>
+    <UnitOfMeasure>Meters * 10</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>390</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>44284|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|3|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|103|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|730|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|849|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|467|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|171|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|16|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|3|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|29</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_250CH</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">36.75812579169821,185.4133894306212,330.817496215511,1231.231934348505,118.7106728148467,356.2023345938969,2135.026176376447,129.8650918846174</MDI>
+      <MDI key="STATISTICS_MAXIMUM">390</MDI>
+      <MDI key="STATISTICS_MEAN">7.706998178116</MDI>
+      <MDI key="STATISTICS_MEDIAN">0.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">35.088914693226</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="5">
+    <Description>US_250FBFM40</Description>
+    <UnitOfMeasure>Class</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>91</HistMin>
+        <HistMax>188</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>10772|0|0|0|0|816|0|0|0|0|0|0|0|0|0|0|0|0|410|0|0|55|0|0|0|0|402|0|5196|0|0|47|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1206|0|0|20045|0|0|397|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|8|0|0|264|0|0|0|0|18|0|6448|0|0|0|0|0|129|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|45|0|0|4|0|0|0|0|83|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|153|0|0|0|0|0|11|0|143|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_250FBFM40</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">5.348775898357639,14.24303879097988,32.92476871154575,118.7106728148467,357.81043572353,388.8631984127879,2176.234148948406,183.3996561024399</MDI>
+      <MDI key="STATISTICS_MAXIMUM">188</MDI>
+      <MDI key="STATISTICS_MEAN">115.5588682885</MDI>
+      <MDI key="STATISTICS_MEDIAN">121.811765</MDI>
+      <MDI key="STATISTICS_MINIMUM">91</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">18.915877873457</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="6">
+    <Description>US_ASP2020</Description>
+    <UnitOfMeasure>Degrees</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>-1</HistMin>
+        <HistMax>359</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>7205|122|203|100|212|103|113|219|103|219|106|122|196|116|211|101|105|205|98|216|125|182|97|104|188|95|210|95|87|203|95|219|80|100|198|104|187|81|161|94|86|198|74|173|96|94|170|96|191|91|105|185|92|176|86|202|89|113|188|107|169|118|81|155|79|169|86|108|182|73|173|91|179|101|88|192|92|210|81|92|175|95|192|96|93|186|84|196|96|188|81|83|173|109|180|105|92|181|93|197|99|83|193|106|203|101|192|104|110|200|99|196|105|109|228|110|204|101|112|234|124|242|107|221|114|108|243|133|252|125|127|230|103|229|124|107|242|130|255|124|253|144|131|273|131|243|123|98|282|125|268|124|131|292|134|277|123|280|143|141|253|151|254|136|113|251|149|252|147|161|239|120|273|136|268|134|113|270|123|236|112|141|259|134|236|119|118|276|162|264|128|259|116|134|249|112|265|127|134|199|105|256|120|105|243|104|232|100|244|102|105|216|113|214|121|136|260|104|245|98|107|214|117|220|120|223|134|107|214|118|212|122|128|224|119|224|113|106|225|132|222|100|202|116|112|226|116|217|102|107|237|124|197|94|107|100</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_ASP2020</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">6.748235468282126,71.76486777660108,94.82514701071332,356.2023345938969,388.8631984127879,13443.22001394935,3716.723829258173,511.6931625432761</MDI>
+      <MDI key="STATISTICS_MAXIMUM">359</MDI>
+      <MDI key="STATISTICS_MEAN">158.8958096667</MDI>
+      <MDI key="STATISTICS_MEDIAN">167.000000</MDI>
+      <MDI key="STATISTICS_MINIMUM">-1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">115.94490076734</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="7">
+    <Description>US_ELEV2020</Description>
+    <UnitOfMeasure>Meters</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>43</HistMin>
+        <HistMax>1079</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>58|72|105|136|168|187|217|167|181|125|133|151|122|166|178|179|229|192|174|203|209|204|242|409|519|1089|733|917|830|832|736|978|779|760|749|764|665|531|539|512|451|451|381|417|431|436|500|586|453|447|430|407|409|378|375|386|391|382|356|362|327|344|336|379|310|296|294|322|292|284|295|298|276|293|282|289|297|275|286|349|324|298|267|307|278|263|287|264|295|319|273|256|294|294|264|349|239|274|284|261|259|247|221|225|219|219|218|197|192|173|190|221|171|160|168|156|145|149|127|129|114|125|114|128|112|131|124|138|113|104|104|92|85|86|99|97|87|101|81|88|95|96|85|78|78|68|72|61|76|62|74|68|76|69|66|70|78|51|63|75|63|67|76|63|56|58|68|51|54|59|55|59|54|62|63|60|41|51|50|52|49|51|51|55|64|54|47|43|48|42|35|51|47|31|41|35|26|37|32|38|27|37|34|24|28|20|30|43|34|26|18|24|20|22|17|27|15|20|24|25|19|25|18|27|21|14|14|13|13|13|9|15|8|10|12|12|9|15|11|11|10|10|7|9|5|1|3|3|3|1|0|4|1|1|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_ELEV2020</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">64.46346894781679,381.2965322364843,630.4704371347786,2135.026176376447,2176.234148948406,3716.723829258173,36636.05967063625,2084.852806803985</MDI>
+      <MDI key="STATISTICS_MAXIMUM">1079</MDI>
+      <MDI key="STATISTICS_MEAN">325.7254742257</MDI>
+      <MDI key="STATISTICS_MEDIAN">270.513725</MDI>
+      <MDI key="STATISTICS_MINIMUM">43</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">191.40548495442</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="8">
+    <Description>US_SLPP2020</Description>
+    <UnitOfMeasure>Percent</UnitOfMeasure>
+    <Histograms>
+      <HistItem>
+        <HistMin>0</HistMin>
+        <HistMax>106</HistMax>
+        <BucketCount>256</BucketCount>
+        <IncludeOutOfRange>1</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>563|0|1521|0|1808|0|0|1815|0|1586|0|0|1403|0|1324|0|1221|0|0|1106|0|1053|0|0|935|0|943|0|886|0|0|901|0|828|0|0|813|0|803|0|770|0|0|728|0|715|0|0|769|0|739|0|741|0|0|731|0|727|0|0|728|0|697|0|677|0|0|765|0|713|0|0|740|0|674|0|721|0|0|674|0|683|0|0|658|0|650|0|0|615|0|660|0|642|0|0|634|0|614|0|0|560|0|559|0|537|0|0|534|0|514|0|0|487|0|462|0|444|0|0|397|0|433|0|0|380|0|403|0|349|0|0|341|0|325|0|0|296|0|250|0|254|0|0|226|0|207|0|0|194|0|187|0|145|0|0|144|0|133|0|0|118|0|97|0|101|0|0|82|0|74|0|0|62|0|59|0|0|60|0|45|0|35|0|0|35|0|39|0|0|23|0|18|0|15|0|0|9|0|14|0|0|6|0|6|0|5|0|0|2|0|4|0|0|2|0|1|0|3|0|0|1|0|0|0|0|2|0|0|0|0|0|0|0|0|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="BandName">US_SLPP2020</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">3.597270068302541,22.73296275124898,38.13436641867862,129.8650918846174,183.3996561024399,511.6931625432761,2084.852806803985,349.7783522949599</MDI>
+      <MDI key="STATISTICS_MAXIMUM">106</MDI>
+      <MDI key="STATISTICS_MEAN">24.69158718251</MDI>
+      <MDI key="STATISTICS_MEDIAN">21.615686</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">18.702362211629</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

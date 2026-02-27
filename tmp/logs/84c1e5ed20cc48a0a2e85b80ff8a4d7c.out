@@ -1,0 +1,5 @@
+Farsite $Rev: 2395 $
+Number of parallel threads = 4 (omp_get_num_procs = 64).
+Loading lcp file for Farsite #1: data/landscape.lcp
+Loading inputs file for Farsite #1: /home/jovyan/work/WIFIRE-Digital-Twinners/FARSITE_demo/tmp/84c1e5ed20cc48a0a2e85b80ff8a4d7c_config.cfg
+Invalid end time Ending Date to close or past end of RAWS data (  30 minute buffer required)

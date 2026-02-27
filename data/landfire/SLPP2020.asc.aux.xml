@@ -1,0 +1,23 @@
+<PAMDataset>
+  <Metadata>
+    <MDI key="AREA_OR_POINT">Area</MDI>
+    <MDI key="Creator">USGS EROS Landfire Product Service</MDI>
+    <MDI key="DataType">Thematic</MDI>
+    <MDI key="ResampleResolution">90</MDI>
+  </Metadata>
+  <PAMRasterBand band="1">
+    <Description>US_SLPP2020</Description>
+    <Metadata>
+      <MDI key="BandName">US_SLPP2020</MDI>
+      <MDI key="RepresentationType">ATHEMATIC</MDI>
+      <MDI key="STATISTICS_COVARIANCES">3.597270068302541,22.73296275124898,38.13436641867862,129.8650918846174,183.3996561024399,511.6931625432761,2084.852806803985,349.7783522949599</MDI>
+      <MDI key="STATISTICS_MAXIMUM">106</MDI>
+      <MDI key="STATISTICS_MEAN">24.69158718251</MDI>
+      <MDI key="STATISTICS_MEDIAN">21.615686</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
+      <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
+      <MDI key="STATISTICS_STDDEV">18.702362211629</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

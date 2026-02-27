@@ -20,10 +20,20 @@ from shapely.ops import unary_union
 # ============================================================================
 
 # Paths
-SCRIPT_DIR = Path(__file__).parent
-FARSITE_EXECUTABLE = SCRIPT_DIR / "TestFARSITE"
-FARSITE_TMP_DIR = SCRIPT_DIR / "tmp"
-NO_BARRIER_PATH = SCRIPT_DIR / "NoBarrier" / "NoBarrier.shp"
+SRC_DIR  = Path(__file__).parent          # .../repo/src/
+BASE_DIR = SRC_DIR.parent                 # .../repo/
+DATA_DIR = BASE_DIR / "data"              # .../repo/data/
+TMP_DIR  = BASE_DIR / "tmp"               # .../repo/tmp/
+
+# Executables and static assets
+FARSITE_EXECUTABLE = SRC_DIR / "TestFARSITE"
+LCPMAKE_EXECUTABLE = SRC_DIR / "lcpmake"
+NO_BARRIER_PATH    = SRC_DIR / "NoBarrier" / "NoBarrier.shp"
+LCP_PATH           = DATA_DIR / "landscape.lcp"
+
+# Temporary working directory for FARSITE runs
+FARSITE_TMP_DIR = TMP_DIR
+
 
 # FARSITE parameters
 FARSITE_MIN_IGNITION_VERTEX_DISTANCE = 15.0
@@ -38,7 +48,7 @@ FUEL_MOISTURES_DATA = "1"
 RAWS_ELEVATION = 2501
 RAWS_UNITS = "English"
 DEFAULT_TEMPERATURE = 66
-DEFAULT_HUMIDITY = 8
+DEFAULT_HUMIDITY = 25
 DEFAULT_PRECIPITATION = 0
 DEFAULT_CLOUDCOVER = 0
 FOLIAR_MOISTURE_CONTENT = 100
@@ -78,7 +88,8 @@ class Config_File:
     """Generates FARSITE configuration (.cfg) files."""
     
     def __init__(self, FARSITE_START_TIME, FARSITE_END_TIME,
-                 windspeed, winddirection, FARSITE_DISTANCE_RES, FARSITE_PERIMETER_RES):
+                 windspeed, winddirection, FARSITE_DISTANCE_RES, FARSITE_PERIMETER_RES,
+                 fuel_moistures=None, temperature=None, humidity=None):
         
         self.__set_default()
         
@@ -90,6 +101,14 @@ class Config_File:
         self.FARSITE_PERIMETER_RES = FARSITE_PERIMETER_RES
         self.windspeed = windspeed
         self.winddirection = winddirection
+        
+        # Override defaults if provided
+        if fuel_moistures:
+            self.FUEL_MOISTURES_DATA = [fuel_moistures]
+        if temperature is not None:
+            self.temperature = temperature
+        if humidity is not None:
+            self.humidity = humidity
 
     def __set_default(self):
         """Set default FARSITE configuration parameters."""
@@ -102,7 +121,7 @@ class Config_File:
         self.FARSITE_ACCELERATION_ON = FARSITE_ACCELERATION_ON
         self.FARSITE_FILL_BARRIERS = FARSITE_FILL_BARRIERS
         self.SPOTTING_SEED = SPOTTING_SEED
-        self.FUEL_MOISTURES_DATA = [(0, 3, 4, 6, 30, 60)]  # Default fuel moistures
+        self.FUEL_MOISTURES_DATA = [(0, 3, 5, 7, 60, 90)]  # Active wildfire conditions (dry)
         self.RAWS_ELEVATION = RAWS_ELEVATION
         self.RAWS_UNITS = RAWS_UNITS
         self.FOLIAR_MOISTURE_CONTENT = FOLIAR_MOISTURE_CONTENT
@@ -193,7 +212,8 @@ class Farsite:
     
     def __init__(self, initial, params, start_time,
                  lcppath=None, barrierpath=None,
-                 dist_res=30, perim_res=60, debug=False):
+                 dist_res=30, perim_res=60, debug=False,
+                 fuel_moistures=None, temperature=None, humidity=None):
         """
         Initialize FARSITE simulation.
         
@@ -206,6 +226,9 @@ class Farsite:
             dist_res: Distance resolution (meters)
             perim_res: Perimeter resolution (meters)
             debug: Keep intermediate files if True
+            fuel_moistures: Tuple (month, fm1, fm10, fm100, herb, wood) or None for defaults
+            temperature: Temperature (F) or None for default
+            humidity: Relative humidity (%) or None for default
         """
         self.farsitepath = str(FARSITE_EXECUTABLE)
         self.id = uuid.uuid4().hex
@@ -232,7 +255,10 @@ class Farsite:
             windspeed=windspeed,
             winddirection=winddirection,
             FARSITE_DISTANCE_RES=dist_res,
-            FARSITE_PERIMETER_RES=perim_res
+            FARSITE_PERIMETER_RES=perim_res,
+            fuel_moistures=fuel_moistures,
+            temperature=temperature,
+            humidity=humidity
         )
         
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
@@ -294,23 +320,15 @@ class Farsite:
         return p.returncode
 
     def output_geom(self):
-        """
-        Extract output geometry from FARSITE shapefile results.
-        
-        Returns:
-            Shapely geometry or None if no output found
-        """
         base = self.outpath
-        out_dir = os.path.dirname(base)
+        out_dir = base  # <-- was: os.path.dirname(base)
         
-        # Find all shapefiles recursively
         candidates = sorted(
             glob.glob(os.path.join(out_dir, "**", "*.shp"), recursive=True),
             key=os.path.getmtime,
             reverse=True
         )
         
-        # Try newest files first
         for shp in candidates[:25]:
             try:
                 gdf = gpd.read_file(shp)
@@ -326,15 +344,14 @@ class Farsite:
 
 
 # ============================================================================
-# HIGH-LEVEL FARSITE FUNCTION
+# HIGH-LEVEL FARSITE FUNCTIONS
 # ============================================================================
 
-def forward_pass_farsite_24h(poly, params, start_time, lcppath,
-                             dist_res=30, perim_res=60, debug=False,
-                             max_step_minutes=30, min_final_minutes=1):
+def forward_pass_farsite(poly, params, start_time, lcppath, 
+                        dist_res=30, perim_res=60, debug=False):
     """
-    Run FARSITE forward simulation for extended periods.
-    Automatically splits into manageable timesteps.
+    Run FARSITE forward simulation for specified time period.
+    Splits long simulations into multiple MAX_FARSITE_TIMESTEP chunks.
     
     Args:
         poly: Initial fire perimeter (Shapely Polygon)
@@ -344,22 +361,132 @@ def forward_pass_farsite_24h(poly, params, start_time, lcppath,
         dist_res: Distance resolution (meters)
         perim_res: Perimeter resolution (meters)
         debug: Keep intermediate files if True
+        
+    Returns:
+        Final fire perimeter geometry or None
+    """
+    dt = params['dt']
+    MAX_SIM = int(dt.total_seconds() / 60)
+    
+    if dist_res > 500:
+        warnings.warn(f'dist_res ({dist_res}) must be 1-500. Setting to 500')
+        dist_res = 500
+    
+    if perim_res > 500:
+        warnings.warn(f'perim_res ({perim_res}) must be 1-500. Setting to 500')
+        perim_res = 500
+    
+    run_id = uuid.uuid4().hex   # Single unique ID for this forward pass
+    
+    # Run multiple FARSITE steps if needed
+    number_of_farsites = dt.seconds // (MAX_SIM * 60)
+    for i in range(number_of_farsites):
+        new_params = {
+            'windspeed': params['windspeed'],
+            'winddirection': params['winddirection'],
+            'dt': datetime.timedelta(minutes=MAX_SIM)
+        }
+        
+        farsite = Farsite(
+            poly, new_params,
+            start_time=start_time,
+            lcppath=lcppath,            dist_res=dist_res,
+            perim_res=perim_res,
+            debug=debug
+        )
+        # farsite.id = run_id   # Share ID so cleanup catches all files
+        
+        farsite.run()
+        out = farsite.output_geom()
+        
+        if out is None:
+            print("FARSITE output geometry is None")
+            return None
+        
+        poly = validate_geom(out)
+    
+    # Handle remaining time
+    remaining_dt = dt - number_of_farsites * datetime.timedelta(minutes=MAX_SIM)
+    if remaining_dt < datetime.timedelta(minutes=10):
+        cleanup_farsite_outputs(run_id, str(FARSITE_TMP_DIR))
+        # print("FARSITE outputs cleaned")
+        return poly
+    
+    new_params = {
+        'windspeed': params['windspeed'],
+        'winddirection': params['winddirection'],
+        'dt': remaining_dt
+    }
+    
+    farsite = Farsite(
+        poly, new_params,
+        start_time=start_time,
+        lcppath=lcppath,        dist_res=dist_res,
+        perim_res=perim_res,
+        debug=debug
+    )
+    # farsite.id = run_id   # Share ID so cleanup catches all files
+    
+    farsite.run()
+    out = farsite.output_geom()
+    
+    if out is None:
+        print("No output perimeter produced; keeping outputs for inspection.")
+        return None
+    
+    cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
+    # print("FARSITE outputs cleaned")
+    
+    return out
+
+
+def forward_pass_farsite_24h(poly, params, start_time, lcppath,
+                             simulation_hours=24,
+                             dist_res=30, perim_res=60, debug=False,
+                             max_step_minutes=30, min_final_minutes=1):
+    """
+    Run FARSITE forward simulation for extended periods (e.g., 24 hours).
+    Automatically splits into manageable timesteps and fetches fuel moisture data.
+    
+    Args:
+        poly: Initial fire perimeter (Shapely Polygon)
+        params: Dict with 'windspeed', 'winddirection', 'lat', 'lon'
+        start_time: Start time (datetime or string "YYYY-mm-dd HH:MM:SS")
+        lcppath: Path to landscape file
+        simulation_hours: Total simulation duration in hours (default: 24)
+        dist_res: Distance resolution (meters)
+        perim_res: Perimeter resolution (meters)
+        debug: Keep intermediate files if True
         max_step_minutes: Maximum timestep per FARSITE run (minutes)
         min_final_minutes: Minimum final timestep to run (skip if smaller)
         
     Returns:
         Final fire perimeter geometry or None
     """
-    total_dt = params["dt"]
+    from data_retrieval import fetch_fuel_moisture
+    
+    # Use simulation_hours parameter, or fall back to params['dt'] if provided
+    if 'dt' in params:
+        total_dt = params["dt"]
+    else:
+        total_dt = datetime.timedelta(hours=simulation_hours)
+    
     if not isinstance(total_dt, datetime.timedelta):
-        raise TypeError("params['dt'] must be a datetime.timedelta")
+        raise TypeError("Must provide simulation_hours or params['dt'] as timedelta")
     
     # Normalize start_time
     if isinstance(start_time, str):
         start_time = start_time.replace("T", " ")
         start_time = datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
     elif not isinstance(start_time, datetime.datetime):
-        raise TypeError("start_time must be datetime or string")
+        raise TypeError("start_time must be datetime or string 'YYYY-mm-dd HH:MM:SS'")
+    
+    # Fetch fuel moisture for the fire location and date
+    if 'lat' in params and 'lon' in params:
+        fuel_moistures = fetch_fuel_moisture(params['lat'], params['lon'], start_time)
+    else:
+        print("⚠ No lat/lon in params, using default fuel moistures")
+        fuel_moistures = None
     
     if dist_res > 500:
         warnings.warn(f"dist_res ({dist_res}) must be 1-500. Setting to 500")
@@ -374,8 +501,11 @@ def forward_pass_farsite_24h(poly, params, start_time, lcppath,
     remaining = total_dt
     step_idx = 0
     
+    print(f"Starting simulation: {total_dt.total_seconds()/3600:.1f} hours in {max_step_minutes}-min steps")
+    
     while remaining > datetime.timedelta(0):
         step_dt = min(max_step, remaining)
+        print(f"Step {step_idx+1}: {remaining.total_seconds()/3600:.1f}h remaining, running {step_dt.total_seconds()/60:.0f}min")
         
         # Skip tiny remainder
         if step_dt < datetime.timedelta(minutes=min_final_minutes):
@@ -394,18 +524,20 @@ def forward_pass_farsite_24h(poly, params, start_time, lcppath,
             dist_res=dist_res,
             perim_res=perim_res,
             debug=debug,
+            fuel_moistures=fuel_moistures
         )
-        farsite.id = run_id  # Share ID for cleanup
+        farsite.id = run_id   # Share ID so cleanup catches all files
         farsite.run(ncores=4)
         
         out = farsite.output_geom()
         
         if out is None:
-            print(f"⚠ FARSITE failed at step {step_idx+1}. Returning last valid geometry.")
+            print("FARSITE output geometry is None. Returning last valid geometry.")
             cleanup_farsite_outputs(run_id, str(FARSITE_TMP_DIR))
-            return poly
+            return poly  # returns the IGNITION polygon, not grown fire
         
         poly = validate_geom(out)
+        print(f"  → Area: {poly.area/1e6:.3f} km²")
         
         # Advance time
         start_time = start_time + step_dt
@@ -413,61 +545,6 @@ def forward_pass_farsite_24h(poly, params, start_time, lcppath,
         step_idx += 1
     
     cleanup_farsite_outputs(run_id, str(FARSITE_TMP_DIR))
+    print(f"✓ Completed {step_idx} timesteps")
     
     return poly
-
-
-# ============================================================================
-# SIMPLE INTERFACE
-# ============================================================================
-
-def run_farsite(ignition_polygon, lcp_path, windspeed, winddirection,
-                duration_hours, start_time=None, dist_res=30, perim_res=60,
-                verbose=True):
-    """
-    Run a FARSITE simulation (simple interface).
-    
-    Args:
-        ignition_polygon: Shapely Polygon (EPSG:5070)
-        lcp_path: Path to landscape .lcp file
-        windspeed: Wind speed (mph)
-        winddirection: Wind direction (degrees, 0-360)
-        duration_hours: Simulation duration (hours)
-        start_time: Start datetime (default: now)
-        dist_res: Distance resolution (meters)
-        perim_res: Perimeter resolution (meters)
-        verbose: Print progress
-        
-    Returns:
-        Shapely Polygon of final fire perimeter, or None if failed
-    """
-    if start_time is None:
-        start_time = datetime.datetime.now()
-    
-    params = {
-        'windspeed': int(windspeed),
-        'winddirection': int(winddirection),
-        'dt': datetime.timedelta(hours=duration_hours)
-    }
-    
-    if verbose:
-        print(f"Running FARSITE ({duration_hours}h simulation)...")
-        print(f"  Wind: {windspeed} mph @ {winddirection}°")
-    
-    result = forward_pass_farsite_24h(
-        poly=ignition_polygon,
-        params=params,
-        start_time=start_time,
-        lcppath=str(lcp_path),
-        dist_res=dist_res,
-        perim_res=perim_res,
-        debug=False
-    )
-    
-    if result and verbose:
-        area_km2 = result.area / 1e6
-        print(f"✓ Complete. Final area: {area_km2:.2f} km²")
-    elif verbose:
-        print("⚠ No output perimeter produced")
-    
-    return result
