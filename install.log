@@ -1,0 +1,202 @@
+PWD: /home/jovyan/work/FARSITE_demo
+Python: /opt/conda/bin/python
+After conda activate:
+/opt/conda/bin/python
+Python 3.12.10
+pip 26.0.1 from /opt/conda/lib/python3.12/site-packages/pip (python 3.12)
+Channels:
+ - conda-forge
+Platform: linux-64
+Collecting package metadata (repodata.json): - \ | / - done
+Solving environment: | / - \ | / done
+
+
+==> WARNING: A newer version of conda exists. <==
+    current version: 25.3.1
+    latest version: 26.1.1
+
+Please update conda by running
+
+    $ conda update -n base -c conda-forge conda
+
+
+
+# All requested packages already installed.
+
+Requirement already satisfied: pip in /opt/conda/lib/python3.12/site-packages (26.0.1)
+Requirement already satisfied: requests in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 1)) (2.32.3)
+Requirement already satisfied: ipykernel in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 2)) (6.29.5)
+Requirement already satisfied: IPython in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 3)) (9.2.0)
+Requirement already satisfied: jupyter_client in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 4)) (8.6.3)
+Requirement already satisfied: jupyter_core in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 5)) (5.7.2)
+Collecting matplotlib (from -r requirements.txt (line 6))
+  Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (52 kB)
+Collecting pandas (from -r requirements.txt (line 7))
+  Downloading pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Requirement already satisfied: numpy in /opt/conda/lib/python3.12/site-packages (from -r requirements.txt (line 8)) (2.4.2)
+Collecting flask (from -r requirements.txt (line 9))
+  Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting flask-restful (from -r requirements.txt (line 10))
+  Downloading Flask_RESTful-0.3.10-py2.py3-none-any.whl.metadata (1.0 kB)
+Collecting geojson (from -r requirements.txt (line 11))
+  Downloading geojson-3.2.0-py3-none-any.whl.metadata (16 kB)
+Collecting contextily (from -r requirements.txt (line 12))
+  Downloading contextily-1.7.0-py3-none-any.whl.metadata (3.1 kB)
+Collecting shapely (from -r requirements.txt (line 13))
+  Downloading shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.8 kB)
+Collecting geopandas (from -r requirements.txt (line 14))
+  Downloading geopandas-1.1.3-py3-none-any.whl.metadata (2.3 kB)
+Collecting pillow (from -r requirements.txt (line 15))
+  Downloading pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting basemap (from -r requirements.txt (line 16))
+  Downloading basemap-2.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.4 kB)
+Collecting seaborn (from -r requirements.txt (line 17))
+  Downloading seaborn-0.13.2-py3-none-any.whl.metadata (5.4 kB)
+Collecting colorcet (from -r requirements.txt (line 18))
+  Downloading colorcet-3.1.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting OWSLib==0.28.1 (from -r requirements.txt (line 19))
+  Downloading OWSLib-0.28.1-py2.py3-none-any.whl.metadata (6.8 kB)
+Collecting influxdb (from -r requirements.txt (line 20))
+  Downloading influxdb-5.3.2-py2.py3-none-any.whl.metadata (6.9 kB)
+Collecting scipy (from -r requirements.txt (line 21))
+  Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Requirement already satisfied: lxml in /home/jovyan/.local/lib/python3.12/site-packages (from OWSLib==0.28.1->-r requirements.txt (line 19)) (6.0.2)
+Requirement already satisfied: python-dateutil>=1.5 in /opt/conda/lib/python3.12/site-packages (from OWSLib==0.28.1->-r requirements.txt (line 19)) (2.9.0.post0)
+Requirement already satisfied: pytz in /opt/conda/lib/python3.12/site-packages (from OWSLib==0.28.1->-r requirements.txt (line 19)) (2025.2)
+Requirement already satisfied: pyyaml in /opt/conda/lib/python3.12/site-packages (from OWSLib==0.28.1->-r requirements.txt (line 19)) (6.0.2)
+Requirement already satisfied: charset_normalizer<4,>=2 in /opt/conda/lib/python3.12/site-packages (from requests->-r requirements.txt (line 1)) (3.4.2)
+Requirement already satisfied: idna<4,>=2.5 in /opt/conda/lib/python3.12/site-packages (from requests->-r requirements.txt (line 1)) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in /opt/conda/lib/python3.12/site-packages (from requests->-r requirements.txt (line 1)) (2.4.0)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/conda/lib/python3.12/site-packages (from requests->-r requirements.txt (line 1)) (2026.2.25)
+Requirement already satisfied: comm>=0.1.1 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (0.2.2)
+Requirement already satisfied: debugpy>=1.6.5 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (1.8.14)
+Requirement already satisfied: matplotlib-inline>=0.1 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (0.1.7)
+Requirement already satisfied: nest-asyncio in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (1.6.0)
+Requirement already satisfied: packaging in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (25.0)
+Requirement already satisfied: psutil in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (7.0.0)
+Requirement already satisfied: pyzmq>=24 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (26.4.0)
+Requirement already satisfied: tornado>=6.1 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (6.5.1)
+Requirement already satisfied: traitlets>=5.4.0 in /opt/conda/lib/python3.12/site-packages (from ipykernel->-r requirements.txt (line 2)) (5.14.3)
+Requirement already satisfied: decorator in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (5.2.1)
+Requirement already satisfied: ipython-pygments-lexers in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (1.1.1)
+Requirement already satisfied: jedi>=0.16 in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (0.19.2)
+Requirement already satisfied: pexpect>4.3 in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (4.9.0)
+Requirement already satisfied: prompt_toolkit<3.1.0,>=3.0.41 in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (3.0.51)
+Requirement already satisfied: pygments>=2.4.0 in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (2.19.1)
+Requirement already satisfied: stack_data in /opt/conda/lib/python3.12/site-packages (from IPython->-r requirements.txt (line 3)) (0.6.3)
+Requirement already satisfied: wcwidth in /opt/conda/lib/python3.12/site-packages (from prompt_toolkit<3.1.0,>=3.0.41->IPython->-r requirements.txt (line 3)) (0.2.13)
+Requirement already satisfied: platformdirs>=2.5 in /opt/conda/lib/python3.12/site-packages (from jupyter_core->-r requirements.txt (line 5)) (4.3.8)
+Collecting contourpy>=1.0.1 (from matplotlib->-r requirements.txt (line 6))
+  Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (5.5 kB)
+Collecting cycler>=0.10 (from matplotlib->-r requirements.txt (line 6))
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->-r requirements.txt (line 6))
+  Downloading fonttools-4.62.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (117 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->-r requirements.txt (line 6))
+  Downloading kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.1 kB)
+Collecting pyparsing>=3 (from matplotlib->-r requirements.txt (line 6))
+  Downloading pyparsing-3.3.2-py3-none-any.whl.metadata (5.8 kB)
+Requirement already satisfied: blinker>=1.9.0 in /opt/conda/lib/python3.12/site-packages (from flask->-r requirements.txt (line 9)) (1.9.0)
+Collecting click>=8.1.3 (from flask->-r requirements.txt (line 9))
+  Downloading click-8.3.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask->-r requirements.txt (line 9))
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Requirement already satisfied: jinja2>=3.1.2 in /opt/conda/lib/python3.12/site-packages (from flask->-r requirements.txt (line 9)) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in /opt/conda/lib/python3.12/site-packages (from flask->-r requirements.txt (line 9)) (3.0.2)
+Collecting werkzeug>=3.1.0 (from flask->-r requirements.txt (line 9))
+  Downloading werkzeug-3.1.6-py3-none-any.whl.metadata (4.0 kB)
+Collecting aniso8601>=0.82 (from flask-restful->-r requirements.txt (line 10))
+  Downloading aniso8601-10.0.1-py2.py3-none-any.whl.metadata (23 kB)
+Requirement already satisfied: six>=1.3.0 in /opt/conda/lib/python3.12/site-packages (from flask-restful->-r requirements.txt (line 10)) (1.17.0)
+Collecting geopy (from contextily->-r requirements.txt (line 12))
+  Downloading geopy-2.4.1-py3-none-any.whl.metadata (6.8 kB)
+Collecting mercantile (from contextily->-r requirements.txt (line 12))
+  Downloading mercantile-1.2.1-py3-none-any.whl.metadata (4.8 kB)
+Collecting rasterio (from contextily->-r requirements.txt (line 12))
+  Downloading rasterio-1.5.0-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (8.6 kB)
+Collecting joblib (from contextily->-r requirements.txt (line 12))
+  Downloading joblib-1.5.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting xyzservices (from contextily->-r requirements.txt (line 12))
+  Downloading xyzservices-2025.11.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting pyogrio>=0.7.2 (from geopandas->-r requirements.txt (line 14))
+  Downloading pyogrio-0.12.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (5.9 kB)
+Collecting pyproj>=3.5.0 (from geopandas->-r requirements.txt (line 14))
+  Downloading pyproj-3.7.2-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (31 kB)
+Collecting basemap_data<3.0,>=2.0 (from basemap->-r requirements.txt (line 16))
+  Downloading basemap_data-2.0.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting numpy (from -r requirements.txt (line 8))
+  Downloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyshp<2.4,>=2.0 (from basemap->-r requirements.txt (line 16))
+  Downloading pyshp-2.3.1-py2.py3-none-any.whl.metadata (55 kB)
+Collecting msgpack (from influxdb->-r requirements.txt (line 20))
+  Downloading msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.1 kB)
+Requirement already satisfied: parso<0.9.0,>=0.8.4 in /opt/conda/lib/python3.12/site-packages (from jedi>=0.16->IPython->-r requirements.txt (line 3)) (0.8.4)
+Requirement already satisfied: ptyprocess>=0.5 in /opt/conda/lib/python3.12/site-packages (from pexpect>4.3->IPython->-r requirements.txt (line 3)) (0.7.0)
+Collecting geographiclib<3,>=1.52 (from geopy->contextily->-r requirements.txt (line 12))
+  Downloading geographiclib-2.1-py3-none-any.whl.metadata (1.6 kB)
+Collecting affine (from rasterio->contextily->-r requirements.txt (line 12))
+  Downloading affine-2.4.0-py3-none-any.whl.metadata (4.0 kB)
+Requirement already satisfied: attrs in /opt/conda/lib/python3.12/site-packages (from rasterio->contextily->-r requirements.txt (line 12)) (25.3.0)
+Collecting cligj>=0.5 (from rasterio->contextily->-r requirements.txt (line 12))
+  Downloading cligj-0.7.2-py3-none-any.whl.metadata (5.0 kB)
+Requirement already satisfied: executing>=1.2.0 in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (2.2.0)
+Requirement already satisfied: asttokens>=2.1.0 in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (3.0.0)
+Requirement already satisfied: pure_eval in /opt/conda/lib/python3.12/site-packages (from stack_data->IPython->-r requirements.txt (line 3)) (0.2.3)
+Downloading OWSLib-0.28.1-py2.py3-none-any.whl (219 kB)
+Downloading matplotlib-3.10.8-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (8.7 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/8.7 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m8.7/8.7 MB[0m [31m49.8 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m8.7/8.7 MB[0m [31m42.1 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pandas-3.0.1-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.9 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/10.9 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10.9/10.9 MB[0m [31m100.0 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading flask-3.1.3-py3-none-any.whl (103 kB)
+Downloading Flask_RESTful-0.3.10-py2.py3-none-any.whl (26 kB)
+Downloading geojson-3.2.0-py3-none-any.whl (15 kB)
+Downloading contextily-1.7.0-py3-none-any.whl (16 kB)
+Downloading shapely-2.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (3.1 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/3.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m3.1/3.1 MB[0m [31m73.9 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading geopandas-1.1.3-py3-none-any.whl (342 kB)
+Downloading pillow-12.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.0 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/7.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m7.0/7.0 MB[0m [31m103.2 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading basemap-2.0.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (1.1 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.1 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.1/1.1 MB[0m [31m49.6 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading numpy-2.3.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.6 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/16.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16.6/16.6 MB[0m [31m122.8 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading basemap_data-2.0.0-py3-none-any.whl (30.5 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/30.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━[0m [32m23.1/30.5 MB[0m [31m116.4 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m30.5/30.5 MB[0m [31m92.2 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pyproj-3.7.2-cp312-cp312-manylinux_2_28_x86_64.whl (9.6 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/9.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m9.6/9.6 MB[0m [31m120.6 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pyshp-2.3.1-py2.py3-none-any.whl (46 kB)
+Downloading seaborn-0.13.2-py3-none-any.whl (294 kB)
+Downloading colorcet-3.1.0-py3-none-any.whl (260 kB)
+Downloading influxdb-5.3.2-py2.py3-none-any.whl (79 kB)
+Downloading scipy-1.17.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.2 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/35.2 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m34.9/35.2 MB[0m [31m175.9 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m35.2/35.2 MB[0m [31m126.5 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading aniso8601-10.0.1-py2.py3-none-any.whl (52 kB)
+Downloading click-8.3.1-py3-none-any.whl (108 kB)
+Downloading contourpy-1.3.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (362 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.62.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.0 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/5.0 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m5.0/5.0 MB[0m [31m105.2 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading kiwisolver-1.5.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/1.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m1.5/1.5 MB[0m [31m60.4 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pyogrio-0.12.1-cp312-cp312-manylinux_2_28_x86_64.whl (32.5 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/32.5 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m32.5/32.5 MB[0m [31m196.1 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m32.5/32.5 MB[0m [31m135.3 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading pyparsing-3.3.2-py3-none-any.whl (122 kB)
+Downloading werkzeug-3.1.6-py3-none-any.whl (225 kB)
+Downloading geopy-2.4.1-py3-none-any.whl (125 kB)
+Downloading geographiclib-2.1-py3-none-any.whl (40 kB)
+Downloading joblib-1.5.3-py3-none-any.whl (309 kB)
+Downloading mercantile-1.2.1-py3-none-any.whl (14 kB)
+Downloading msgpack-1.1.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (427 kB)
+Downloading rasterio-1.5.0-cp312-cp312-manylinux_2_28_x86_64.whl (37.6 MB)
+[?25l   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m0.0/37.6 MB[0m [31m?[0m eta [36m-:--:--[0m[2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m [32m37.5/37.6 MB[0m [31m201.5 MB/s[0m eta [36m0:00:01[0m[2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m37.6/37.6 MB[0m [31m141.7 MB/s[0m  [33m0:00:00[0m
+[?25hDownloading cligj-0.7.2-py3-none-any.whl (7.1 kB)
+Downloading affine-2.4.0-py3-none-any.whl (15 kB)
+Downloading xyzservices-2025.11.0-py3-none-any.whl (93 kB)
+Installing collected packages: aniso8601, xyzservices, werkzeug, pyshp, pyproj, pyparsing, pillow, numpy, msgpack, kiwisolver, joblib, itsdangerous, geojson, geographiclib, fonttools, cycler, colorcet, click, basemap_data, affine, shapely, scipy, pyogrio, pandas, OWSLib, mercantile, influxdb, geopy, flask, contourpy, cligj, rasterio, matplotlib, geopandas, flask-restful, seaborn, contextily, basemap
+[?25l[2K   [91m━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 2/38[0m [werkzeug][2K   [91m━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 3/38[0m [pyshp][2K   [91m━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 4/38[0m [pyproj][2K   [91m━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 5/38[0m [pyparsing][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K  Attempting uninstall: numpy
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K    Found existing installation: numpy 2.4.2
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K    Uninstalling numpy-2.4.2:
+   [91m━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 6/38[0m [pillow][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K      Successfully uninstalled numpy-2.4.2
+   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m 7/38[0m [numpy][2K   [91m━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10/38[0m [joblib][2K   [91m━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m10/38[0m [joblib][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m14/38[0m [fonttools][2K   [91m━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━━━[0m [32m16/38[0m [colorcet][2K   [91m━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m18/38[0m [basemap_data][2K   [91m━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━━━━━━━━━━━━━━━[0m [32m18/38[0m [basemap_data][2K   [91m━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━━[0m [32m19/38[0m [affine][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━━[0m [32m20/38[0m [shapely][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━━[0m [32m21/38[0m [scipy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━━[0m [32m22/38[0m [pyogrio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━━[0m [32m23/38[0m [pandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m24/38[0m [OWSLib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━━━━[0m [32m24/38[0m [OWSLib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━━[0m [32m27/38[0m [geopy][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[90m╺[0m[90m━━━━━━━━━━[0m [32m28/38[0m [flask][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━━[0m [32m31/38[0m [rasterio][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━━[0m [32m32/38[0m [matplotlib][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━━━[0m [32m33/38[0m [geopandas][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m35/38[0m [seaborn][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━━━[0m [32m35/38[0m [seaborn][2K   [91m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m[91m╸[0m[90m━[0m [32m37/38[0m [basemap][2K   [90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [32m38/38[0m [basemap]
+[?25h[1A[2KSuccessfully installed OWSLib-0.28.1 affine-2.4.0 aniso8601-10.0.1 basemap-2.0.0 basemap_data-2.0.0 click-8.3.1 cligj-0.7.2 colorcet-3.1.0 contextily-1.7.0 contourpy-1.3.3 cycler-0.12.1 flask-3.1.3 flask-restful-0.3.10 fonttools-4.62.1 geographiclib-2.1 geojson-3.2.0 geopandas-1.1.3 geopy-2.4.1 influxdb-5.3.2 itsdangerous-2.2.0 joblib-1.5.3 kiwisolver-1.5.0 matplotlib-3.10.8 mercantile-1.2.1 msgpack-1.1.2 numpy-2.3.5 pandas-3.0.1 pillow-12.1.1 pyogrio-0.12.1 pyparsing-3.3.2 pyproj-3.7.2 pyshp-2.3.1 rasterio-1.5.0 scipy-1.17.1 seaborn-0.13.2 shapely-2.1.2 werkzeug-3.1.6 xyzservices-2025.11.0

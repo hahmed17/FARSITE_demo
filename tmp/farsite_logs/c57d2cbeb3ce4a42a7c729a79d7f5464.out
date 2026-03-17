@@ -1,0 +1,11 @@
+Farsite $Rev: 2395 $
+Number of parallel threads = 4 (omp_get_num_procs = 6).
+Loading lcp file for Farsite #1: landscape.lcp
+Loading inputs file for Farsite #1: /home/jovyan/work/FARSITE_demo/tmp/c57d2cbeb3ce4a42a7c729a79d7f5464_config.cfg
+Loading ignition file for Farsite #1: /home/jovyan/work/FARSITE_demo/tmp/c57d2cbeb3ce4a42a7c729a79d7f5464_ignite.shp
+Loading barrier file for Farsite #1: /home/jovyan/work/FARSITE_demo/NoBarrier/NoBarrier.shp
+Launching Farsite #1
+Starting time step 0.000000 (maximum = 60)
+Starting time step 30.000000 (maximum = 60)
+Starting time step 60.000000 (maximum = 60)
+Writing outputs for Farsite #1 to /home/jovyan/work/FARSITE_demo/tmp/c57d2cbeb3ce4a42a7c729a79d7f5464_out
