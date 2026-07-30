@@ -335,7 +335,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
             'winddirection': params['winddirection'],
             'temperature':     params['temperature'],
             'humidity': params['humidity'],
-            'dt':            datetime.timedelta(minutes=MAX_SIM),
+            'dt':            datetime.timedelta(minutes=MAX_SIM)
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
                           lcppath=lcppath, dist_res=dist_res,
@@ -358,7 +358,7 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         'winddirection': params['winddirection'],
         'temperature':     params['temperature'],
         'humidity': params['humidity'],
-        'dt':            remaining_dt,
+        'dt':            remaining_dt
     }
     farsite = Farsite(poly, new_params, start_time=start_time,
                       lcppath=lcppath, dist_res=dist_res,
