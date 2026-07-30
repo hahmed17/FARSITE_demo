@@ -54,7 +54,7 @@ FUEL_MOISTURES_DATA         = [[0, 7, 4, 7, 30, 60]]
 RAWS_ELEVATION              = 2501
 RAWS_UNITS                  = 'English'
 DEFAULT_TEMPERATURE         = 66
-DEFAULT_HUMIDITY            = 8
+DEFAULT_HUMIDITY            = 17
 DEFAULT_PRECIPITATION       = 0
 DEFAULT_CLOUDCOVER          = 0
 FOLIAR_MOISTURE_CONTENT     = 100
@@ -91,6 +91,8 @@ class Config_File:
                  FARSITE_END_TIME: datetime.datetime,
                  windspeed: int,
                  winddirection: int,
+                 temperature: int,
+                 humidity: int,
                  FARSITE_DISTANCE_RES: int,
                  FARSITE_PERIMETER_RES: int):
 
@@ -104,6 +106,8 @@ class Config_File:
         self.FARSITE_PERIMETER_RES = FARSITE_PERIMETER_RES
         self.windspeed             = windspeed
         self.winddirection         = winddirection
+        self.temperature = temperature
+        self.humidity = humidity
 
     def __set_default(self):
         self.version                              = 1.0
@@ -216,9 +220,11 @@ class Farsite:
         end_dt        = start_dt + params['dt']
         windspeed     = params['windspeed']
         winddirection = params['winddirection']
+        temperature =     params['temperature']
+        humidity = params['humidity']
 
         # Config file
-        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, dist_res, perim_res)
+        self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, temperature, humidity, dist_res, perim_res)
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
         self.config.to_file(self.configpath)
 
@@ -327,6 +333,8 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
         new_params = {
             'windspeed':     params['windspeed'],
             'winddirection': params['winddirection'],
+            'temperature':     params['temperature'],
+            'humidity': params['humidity'],
             'dt':            datetime.timedelta(minutes=MAX_SIM),
         }
         farsite = Farsite(poly, new_params, start_time=start_time,
@@ -348,6 +356,8 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
     new_params = {
         'windspeed':     params['windspeed'],
         'winddirection': params['winddirection'],
+        'temperature':     params['temperature'],
+        'humidity': params['humidity'],
         'dt':            remaining_dt,
     }
     farsite = Farsite(poly, new_params, start_time=start_time,
