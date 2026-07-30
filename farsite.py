@@ -200,7 +200,7 @@ class Farsite:
     def __init__(self, initial: Polygon, params: dict,
                  start_time: datetime.datetime,
                  lcppath: str = None, barrierpath: str = None,
-                 dist_res: int = 30, perim_res: int = 60,
+                 dist_res: int = DEFAULT_DIST_RES, perim_res: int = DEFAULT_PERIM_RES,
                  debug: bool = False):
 
         self.farsitepath = str(FARSITE_EXECUTABLE)
