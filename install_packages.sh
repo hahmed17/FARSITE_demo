@@ -1,33 +1,28 @@
 #!/bin/bash
-
 {
     set -euo pipefail
 
-    # initialize conda for non-interactive shells
-    # source "$(conda info --base)/etc/profile.d/conda.sh"
-
-    # conda activate base
-    # conda install -c conda-forge gdal -y 
-    
-    # pip -q install -r requirements.txt 
-    #!/usr/bin/env bash
-    
     echo "PWD: $(pwd)"
-    echo "Python: $(python -c 'import sys; print(sys.executable)')"
-    
-    # Ensure conda commands work in non-interactive shells (safe even if already works)
+
     source "$(conda info --base)/etc/profile.d/conda.sh"
-    # conda update -n base -c conda-forge conda
-    conda activate base
-    
+
+    ENV_NAME="gdal_env"
+
+    # Create a fresh env with gdal 
+    conda create -n "$ENV_NAME" -c conda-forge python=3.11 gdal -y
+
+    conda activate "$ENV_NAME"
+
     echo "After conda activate:"
     which python
-    /opt/conda/bin/python -V
-    /opt/conda/bin/python -m pip -V
-    
-    conda install -c conda-forge -y gdal
-    
-    /opt/conda/bin/python -m pip install --upgrade pip
-    /opt/conda/bin/python -m pip install -r requirements.txt
-    
+    python -V
+
+    # Register this env as a Jupyter kernel
+    python -m pip install ipykernel
+    python -m ipykernel install --user --name "$ENV_NAME" --display-name "Python ($ENV_NAME)"
+
+    # Install the rest of the requirements
+    python -m pip install --upgrade pip
+    python -m pip install -r requirements.txt
+
 } >install.log 2>&1
