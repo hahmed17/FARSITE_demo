@@ -54,7 +54,7 @@ FUEL_MOISTURES_DATA         = [[0, 7, 4, 7, 30, 60]]
 RAWS_ELEVATION              = 2501
 RAWS_UNITS                  = 'English'
 DEFAULT_TEMPERATURE         = 66
-DEFAULT_HUMIDITY            = 8
+DEFAULT_HUMIDITY            = .08
 DEFAULT_PRECIPITATION       = 0
 DEFAULT_CLOUDCOVER          = 0
 FOLIAR_MOISTURE_CONTENT     = 100
@@ -92,7 +92,7 @@ class Config_File:
                  windspeed: int,
                  winddirection: int,
                  temperature: int,
-                 humidity: int,
+                 humidity: float,
                  FARSITE_DISTANCE_RES: int,
                  FARSITE_PERIMETER_RES: int):
 
