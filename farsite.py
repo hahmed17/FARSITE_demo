@@ -74,8 +74,8 @@ def validate_geom(poly):
     poly = make_valid(poly)
     if isinstance(poly, (GeometryCollection, MultiPolygon)):
         poly = max(poly.geoms, key=lambda g: g.area)
-    if not isinstance(poly, Polygon):
-        print(f'Validated geometry is not a Polygon. Type: {type(poly)}')
+    if isinstance(poly, MultiPolygon): 
+        poly = max(poly.geoms, key=lambda g: g.area)
     return poly
 
 
@@ -277,6 +277,7 @@ class Farsite:
 
         geom = gdf['geometry'][0]
         return Polygon(geom.coords)
+        
 
 
 # ============================================================================
@@ -372,3 +373,71 @@ def forward_pass_farsite(poly, params, start_time, lcppath,
 
     cleanup_farsite_outputs(farsite.id, str(FARSITE_TMP_DIR))
     return out
+
+
+
+def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
+                         dist_res=30, perim_res=60, debug=False):
+    dt      = params['dt']
+    STEP_MINUTES = 30  # step size
+
+    if dist_res > 500:
+        warnings.warn(f'dist_res ({dist_res}) must be 1-500. Setting to 500')
+        dist_res = 500
+    if perim_res > 500:
+        warnings.warn(f'perim_res ({perim_res}) must be 1-500. Setting to 500')
+        perim_res = 500
+
+    total_minutes = int(dt.total_seconds() / 60)
+    number_of_steps = total_minutes // STEP_MINUTES
+    remaining_minutes = total_minutes % STEP_MINUTES
+
+    current_time = (datetime.datetime.strptime(start_time, "%Y-%m-%d %H:%M:%S")
+                    if isinstance(start_time, str)
+                    else start_time)
+
+    run_id = uuid.uuid4().hex
+
+    for i in range(number_of_steps):
+        step_params = {
+            'windspeed':     params['windspeed'],
+            'winddirection': params['winddirection'],
+            'temperature':   params['temperature'],
+            'humidity':      params['humidity'],
+            'dt':            datetime.timedelta(minutes=STEP_MINUTES)
+        }
+        farsite = Farsite(poly, step_params,
+                          start_time=current_time,
+                          lcppath=lcppath, dist_res=dist_res,
+                          perim_res=perim_res, debug=debug)
+        farsite.run()
+        out = farsite.output_geom()
+        if out is None:
+            print(f"FARSITE output None at step {i+1}/{number_of_steps}")
+            return None
+        poly = validate_geom(out)
+        current_time += datetime.timedelta(minutes=STEP_MINUTES)
+        print(f"  Step {i+1}/{number_of_steps}: {poly.area/1e6:.3f} km2")
+
+    # Handle remainder
+    if remaining_minutes >= 10:
+        step_params = {
+            'windspeed':     params['windspeed'],
+            'winddirection': params['winddirection'],
+            'temperature':   params['temperature'],
+            'humidity':      params['humidity'],
+            'dt':            datetime.timedelta(minutes=remaining_minutes)
+        }
+        farsite = Farsite(poly, step_params,
+                          start_time=current_time,
+                          lcppath=lcppath, dist_res=dist_res,
+                          perim_res=perim_res, debug=debug)
+        farsite.run()
+        out = farsite.output_geom()
+        if out is None:
+            print("FARSITE output None on remainder step")
+            return None
+        poly = validate_geom(out)
+
+    cleanup_farsite_outputs(run_id, str(FARSITE_TMP_DIR))
+    return poly
