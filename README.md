@@ -177,19 +177,6 @@ runs/                                  # run_parallel.py logs and executed noteb
 | 11 | restart experiments and their summary |
 | 12 | worked example: Zogg |
 
-## Changes to `farsite.py`
-
-Based on the original single-step module. Each change is marked `PATCH` in the file, and older calls still work:
-
-1. Relative humidity is written in percent (it was written as a fraction, e.g. 0.08 instead of 8).
-2. The **final** perimeter is read from FARSITE's output, not the first row. Fronts are turned into polygons as in `geometry.py`.
-3. Each step's temporary files are cleaned up; failed steps keep theirs for inspection.
-4. Geometry checks ignore non-polygon parts.
-5. `forward_pass_farsite_multistep` accepts time-varying weather, and can return every step.
-6. FARSITE logs survive timeouts, and failures say why: timeout, exit code, last log line.
-7. Short leftover steps are merged into the previous 30-minute step (FARSITE rejects very short runs).
-8. Optional smoothing of each step's input perimeter.
-9. Per-step fuel moistures.
 
 ## Troubleshooting
 
