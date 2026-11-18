@@ -25,6 +25,8 @@ PATCHED (see "PATCH" comments):
      being run alone, since FARSITE rejects runs whose start/end are too close.
   8. Optional smoothing of each step's input perimeter (simplify_m), and the
      input's vertex count/area in failure messages.
+  9. Per-step fuel moistures: a weather dict with fm1/fm10/fm100 (+ fm_herb/fm_woody)
+     overrides FUEL_MOISTURES_DATA for that step.
 
 Directory layout:
     ./
@@ -146,6 +148,15 @@ def validate_geom(poly):
     if not parts:
         return None
     return max(parts, key=lambda g: g.area)
+
+
+def fuel_moisture_row(wx):
+    """PATCH 9: FUEL_MOISTURES_DATA row [model 0 (all), 1h, 10h, 100h, live herb, live woody] from a
+    weather dict with fm1/fm10/fm100 (and optionally fm_herb/fm_woody), as integer percent."""
+    default = FUEL_MOISTURES_DATA[0]
+    dead = [max(2, int(round(wx[k]))) for k in ('fm1', 'fm10', 'fm100')]
+    live = [int(round(wx.get('fm_herb', default[4]))), int(round(wx.get('fm_woody', default[5])))]
+    return [0] + dead + live
 
 
 def prepare_ignition(poly, simplify_m=0):
@@ -317,6 +328,8 @@ class Farsite:
 
         # Config file
         self.config     = Config_File(start_dt, end_dt, windspeed, winddirection, temperature, humidity, dist_res, perim_res)
+        if params.get('fuel_moistures'):                 # PATCH 9: per-step fuel moistures
+            self.config.FUEL_MOISTURES_DATA = params['fuel_moistures']
         self.configpath = os.path.join(self.tmpfolder, f'{self.id}_config.cfg')
         self.config.to_file(self.configpath)
 
@@ -536,7 +549,10 @@ def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
 
     Args:
         poly:        Initial perimeter (Shapely Polygon, EPSG:5070)
-        params:      EITHER a dict with 'windspeed', 'winddirection',
+        params:      (A weather dict may also carry 'fm1', 'fm10', 'fm100' [and 'fm_herb',
+                     'fm_woody'] in percent; that step then uses those fuel moistures
+                     instead of FUEL_MOISTURES_DATA.)
+                     EITHER a dict with 'windspeed', 'winddirection',
                      'temperature', 'humidity' and 'dt' (constant weather,
                      original behaviour)
                      OR a callable f(step_start, step_end) -> dict with the
@@ -610,6 +626,8 @@ def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
             'humidity':      wx['humidity'],
             'dt':            datetime.timedelta(minutes=minutes),
         }
+        if all(k in wx for k in ('fm1', 'fm10', 'fm100')):
+            step_params['fuel_moistures'] = [fuel_moisture_row(wx)]
         poly_in = prepare_ignition(poly, simplify_m)
         farsite = Farsite(poly_in, step_params,
                           start_time=current_time,

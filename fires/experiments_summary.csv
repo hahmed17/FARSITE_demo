@@ -1,0 +1,4 @@
+experiment,fire,lead_bin,n,iou,iou_persist,iou_gain,iou_full,area_err_pct
+nirops_to_viirs,Zogg_2020,0–12 h,3,0.715,0.777,-0.062,0.715,27.322
+nirops_to_viirs,Zogg_2020,12–24 h,2,0.401,0.7,-0.299,0.401,145.202
+viirs_to_nirops,Zogg_2020,0–12 h,2,0.506,0.872,-0.366,0.506,99.209
