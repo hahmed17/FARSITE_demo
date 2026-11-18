@@ -9,3 +9,4 @@ fires/*/landfire/
 *.prj
 *.lcp
 *.gpkg
+fires/*/landscape.lcp

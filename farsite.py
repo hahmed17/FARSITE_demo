@@ -23,6 +23,8 @@ PATCHED (see "PATCH" comments):
      failed step reports why (timeout / exit code + last log line).
   7. Short leftover pieces are folded into the previous 30-min step instead of
      being run alone, since FARSITE rejects runs whose start/end are too close.
+  8. Optional smoothing of each step's input perimeter (simplify_m), and the
+     input's vertex count/area in failure messages.
 
 Directory layout:
     ./
@@ -144,6 +146,15 @@ def validate_geom(poly):
     if not parts:
         return None
     return max(parts, key=lambda g: g.area)
+
+
+def prepare_ignition(poly, simplify_m=0):
+    """PATCH 8: optional light smoothing of a step's input perimeter (tolerance in m)."""
+    if simplify_m and simplify_m > 0:
+        smooth = validate_geom(poly.simplify(simplify_m, preserve_topology=True))
+        if smooth is not None and smooth.area > 0.98 * poly.area:
+            return smooth
+    return poly
 
 
 def full_geom(geom):
@@ -518,7 +529,7 @@ def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
                                    dt=None, step_minutes=30,
                                    min_remainder_minutes=10,
                                    return_history=False, on_step=None,
-                                   timeout=20, ncores=4, verbose=True):
+                                   timeout=20, ncores=4, verbose=True, simplify_m=0):
     """
     Run FARSITE in fixed-length steps, feeding each step's output perimeter
     into the next step.
@@ -545,6 +556,8 @@ def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
                                step fails, the history so far is returned and
                                the last entry has 'failed': True.
         on_step:     Optional callback f(record_dict) after each step.
+        simplify_m:  If > 0, each step's input perimeter is simplified with this tolerance (m)
+                     before FARSITE. Very jagged perimeters (thousands of tiny loops) can crash it.
         debug:       Keep each step's temp files if True.
 
     Returns:
@@ -597,14 +610,15 @@ def forward_pass_farsite_multistep(poly, params, start_time, lcppath,
             'humidity':      wx['humidity'],
             'dt':            datetime.timedelta(minutes=minutes),
         }
-        farsite = Farsite(poly, step_params,
+        poly_in = prepare_ignition(poly, simplify_m)
+        farsite = Farsite(poly_in, step_params,
                           start_time=current_time,
                           lcppath=lcppath, dist_res=dist_res,
                           perim_res=perim_res, debug=debug)
         rc = farsite.run(timeout=timeout, ncores=ncores)
         out = farsite.output_geom()
         if out is None:
-            reason = farsite.failure_reason()
+            reason = farsite.failure_reason() + f"; input perimeter {len(poly_in.exterior.coords)} vertices, {poly_in.area/1e6:.1f} km2"
             print(f"FARSITE output None at step {i+1}/{len(step_lengths)} "
                   f"({current_time} -> {step_end}): {reason}; "
                   f"files kept with id {farsite.id}")
